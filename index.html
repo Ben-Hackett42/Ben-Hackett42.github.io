@@ -7,7 +7,7 @@
 
   <style>
     body {
-      background-color: lightgray;
+      background-color: rgba(211, 211, 211, 0.541);
     }
 
     .topnav {
@@ -41,6 +41,16 @@
       margin-top: 20px;
       font-weight: bold;
     }
+
+    .extension{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      text-align: center;
+      color: black;
+      margin-top: 20px;
+      font-weight: bold;
+      padding-top: 75px;
+    }
   </style>
 
   <img
@@ -52,7 +62,9 @@
 
 <body>
   <div class="topnav">
-    <a class="active" href="index.html">Home</a>
+    <a class="active" href="index.html">Status</a>
+    <a href="https://fhps.incidentiq.com"> Ticket</a>
+    <a href="about.html">About Me</a>
   </div>
 
   <img
@@ -88,5 +100,9 @@
     fetchStatus();
     setInterval(fetchStatus, 10000); // Refresh every 10 seconds
   </script>
+
+  <div class ="extension">
+    <li> My Office Extension is 31641</li>
+  </div>
 </body>
 </html>
