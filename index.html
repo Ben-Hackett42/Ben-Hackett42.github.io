@@ -82,12 +82,23 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.12);
     }
 
+    /* PULSE ANIMATION for status text */
+    @keyframes pulse {
+      0%, 100% {
+        text-shadow: 0 0 5px rgba(0, 150, 199, 0.7);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(0, 150, 199, 1);
+      }
+    }
+
     .status {
       font-size: 35px;
       text-align: center;
       color: black;
       font-weight: bold;
       margin-top: 50px;
+      animation: pulse 2s infinite;
     }
 
     .extension {
@@ -130,6 +141,59 @@
         width: 90vw;
       }
     }
+
+
+
+    body.weather-theme {
+      display: flex;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: background 1.5s ease, color 1.5s ease;
+    }
+
+
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    body.weather-theme.clear {
+      background: linear-gradient(270deg, #87CEFA, #00BFFF, #ffffff);
+      background-size: 600% 600%;
+      animation: gradientShift 15s ease infinite;
+      color: #333;
+    }
+
+    body.weather-theme.rain {
+      background: linear-gradient(to bottom, #3a3a3a, #2c2c2c);
+      color: white;
+    }
+
+    body.weather-theme.clouds {
+      background: #d3d3d3;
+      color: #222;
+    }
+
+    body.weather-theme.snow {
+      background: #e0f7fa;
+      color: #333;
+    }
+
+    body.weather-theme.thunderstorm {
+      background: #1f1f1f;
+      color: #fff700;
+    }
+
+
+
   </style>
 </head>
 
@@ -159,31 +223,60 @@
   </main>
 
 
-  <script>
-    const statusDiv = document.getElementById("status");
-    const apiURL =
-      "https://script.google.com/macros/s/AKfycbx45CloYqAM6ds9O_csDMz7M4DtDvvI21oyaMhXK0hhaQLdSinmbrMyVP0N2WvXBJS9/exec";
+<script>
+  const statusDiv = document.getElementById("status");
+  const apiURL =
+    "https://script.google.com/macros/s/AKfycbx45CloYqAM6ds9O_csDMz7M4DtDvvI21oyaMhXK0hhaQLdSinmbrMyVP0N2WvXBJS9/exec";
 
-    async function fetchStatus() {
-      try {
-        const res = await fetch(apiURL);
-        const data = await res.json();
-        if (data.status === "IN") {
-          statusDiv.textContent = "✅ I am IN the building";
-        } else if (data.status === "OUT") {
-          statusDiv.textContent = "❌ I am OUT of the building";
-        } else {
-          statusDiv.textContent = "Status unknown.";
-        }
-      } catch (e) {
-        statusDiv.textContent = "Error fetching status.";
-        console.error(e);
+  async function fetchStatus() {
+    try {
+      const res = await fetch(apiURL);
+      const data = await res.json();
+      if (data.status === "IN") {
+        statusDiv.textContent = "✅ I am IN the building";
+      } else if (data.status === "OUT") {
+        statusDiv.textContent = "❌ I am OUT of the building";
+      } else {
+        statusDiv.textContent = "Status unknown.";
       }
+    } catch (e) {
+      statusDiv.textContent = "Error fetching status.";
+      console.error(e);
     }
+  }
 
-    fetchStatus();
-    setInterval(fetchStatus, 10000); // Refresh every 10 seconds
-  </script>
+  fetchStatus();
+  setInterval(fetchStatus, 10000); // Refresh every 10 seconds
+
+async function getWeather() {
+  const lat = 42.985166728588155;
+  const lon = -85.57566707452516; 
+  const apiKey = '68ed19e47cae8e3992236d7350213ec4';
+  
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+  const response = await fetch(url);
+  const data = await response.json();
+  
+  return data.weather[0].main.toLowerCase(); 
+}
+
+async function setWeatherTheme() {
+  try {
+    const weather = await getWeather();
+    console.log("Weather from API:", weather); 
+
+    document.body.classList.remove('clear', 'rain', 'clouds', 'snow', 'thunderstorm');
+    document.body.classList.add('weather-theme', weather);
+  } catch (error) {
+    console.error('Error fetching or applying weather theme:', error);
+  }
+}
+
+setWeatherTheme();
+
+</script>
+
 
 </body>
 </html>
