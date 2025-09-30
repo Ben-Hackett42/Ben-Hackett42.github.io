@@ -16,12 +16,12 @@
       display: flex;
       min-height: 100vh;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: rgba(211, 211, 211, 0.541);
+      background-color: rgb(88, 88, 88);
     }
 
     .sidebar {
       width: 240px;
-      background: linear-gradient(180deg, #cfe6eb 0%, #249fe6 100%);
+      background: linear-gradient(180deg, #080808 25%, #0a80c5 100%);
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -49,15 +49,19 @@
       font-size: 18px;
       font-weight: 600;
       border-radius: 8px;
-      color: #222;
-      background-color: #ffffffc9;
+      color: #070707;
+      background-color: #8a8888c9;
       transition: background 0.2s, color 0.2s;
     }
 
-    .nav-links a:hover,
+    .nav-links a:hover{
+      background: #0a26c7;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,180,216,0.1);
+    }
     .nav-links a.active {
-      background: #fff;
-      color: #0096c7;
+      background: #a09e9e;
+      color: #000000;
       box-shadow: 0 2px 6px rgba(0,180,216,0.1);
     }
 
@@ -82,13 +86,13 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.12);
     }
 
-    /* PULSE ANIMATION for status text */
+  
     @keyframes pulse {
       0%, 100% {
-        text-shadow: 0 0 5px rgba(183, 221, 243, 0.7);
+        text-shadow: 0 0 5px rgba(0, 1, 2, 0.7);
       }
       50% {
-        text-shadow: 0 0 20px rgb(63, 166, 235);
+        text-shadow: 0 0 20px rgb(0, 255, 34);
       }
     }
 
@@ -165,7 +169,7 @@
       }
     }
 
-    body.weather-theme.clear {
+/*     body.weather-theme.clear {
       background: linear-gradient(270deg, #87CEFA, #00BFFF, #ffffff);
       background-size: 600% 600%;
       animation: gradientShift 15s ease infinite;
@@ -190,7 +194,7 @@
     body.weather-theme.thunderstorm {
       background: #1f1f1f;
       color: #fff700;
-    }
+    } */
 
 
 
@@ -207,6 +211,7 @@
       <a href="https://fhps.incidentiq.com" target="_blank" rel="noopener">Ticket</a>
        <a href="calendar.html">Calendar</a>
       <a href="about.html">About Me</a>
+      <a href="space.html">Space</a>
     </nav>
   </aside>
 
@@ -219,6 +224,7 @@
 
     <div class="extension">
       <p>My Office Extension is 31641</p>
+
     </div>
   </main>
 

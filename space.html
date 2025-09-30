@@ -17,12 +17,12 @@
       display: flex;
       min-height: 100vh;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: rgb(88, 88, 88);
+      background-color: rgb(0, 0, 0);
     }
 
     .sidebar {
       width: 240px;
-      background: linear-gradient(180deg, #080808 25%, #0a80c5 100%);
+      background: linear-gradient(180deg, #080808 0%, #044266 100%);
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -50,21 +50,28 @@
       font-size: 18px;
       font-weight: 600;
       border-radius: 8px;
-      color: #070707;
-      background-color: #8a8888c9;
+      color: #ffffff;
+      background-color: #050000c9;
       transition: background 0.2s, color 0.2s;
     }
 
-    .nav-links a:hover{
-      background: #0a26c7;
-      color: #ffffff;
-      box-shadow: 0 2px 6px rgba(0,180,216,0.1);
-    }
+    .nav-links a:hover,
     .nav-links a.active {
-      background: #a09e9e;
+      background: #999898;
       color: #000000;
       box-shadow: 0 2px 6px rgba(0,180,216,0.1);
     }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
 
     @media (max-width: 768px) {
       body {
@@ -94,12 +101,16 @@
       }
 
     }
-    .content {
-      flex: 1;
-      padding: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+    #NasaPic {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+        background-color: rgba(134, 134, 134, 0.979);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(15, 196, 228, 0.938);
+        max-width: 800px;
+        margin: auto;
     }
   </style>
 </head>
@@ -112,23 +123,19 @@
     <nav class="nav-links">
       <a href="index.html">Status</a>
       <a href="https://fhps.incidentiq.com" target="_blank" rel="noopener">Ticket</a>
-       <a href="calendar.html" class="active">Calendar</a>
+      <a href="calendar.html">Calendar</a>
       <a href="about.html">About Me</a>
-      <a href="space.html">Space</a>
+      <a href="space.html" class="active">Space</a>
     </nav>
 </aside>
 
-<main class="content" style="flex-direction: column; align-items: center; display: flex;">
-    <h1 style="color:#1976d2; text-align:center; margin-bottom:20px;">My Calendar</h1>
-    <div class="calendar" style="display: flex; flex-direction: column; align-items: center;">
-        <iframe src="https://calendar.google.com/calendar/embed?src=bhackett%40fhps.net&ctz=America%2FDetroit" style="border: 0; border-radius: 15px;" width="800" height="600" frameborder="0" scrolling="no" ></iframe>
-    </div>
-</main>
+<div id="NasaPic">
+    <h1 id="nasaTitle"></h1>
+    <div id="media"></div>
+    <p id="desc"></p>
+</div>
 
- 
-
-  
-
+    <script src="space.js"></script>
 
 </body>
 </html>

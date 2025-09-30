@@ -17,12 +17,12 @@
       display: flex;
       min-height: 100vh;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: rgba(211, 211, 211, 0.541);
+      background-color: rgb(88, 88, 88);
     }
 
     .sidebar {
       width: 240px;
-      background: linear-gradient(180deg, #cfe6eb 0%, #249fe6 100%);
+      background: linear-gradient(180deg, #080808 25%, #0a80c5 100%);
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -50,15 +50,19 @@
       font-size: 18px;
       font-weight: 600;
       border-radius: 8px;
-      color: #222;
-      background-color: #ffffffc9;
+      color: #070707;
+      background-color: #8a8888c9;
       transition: background 0.2s, color 0.2s;
     }
 
-    .nav-links a:hover,
+    .nav-links a:hover{
+      background: #0a26c7;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,180,216,0.1);
+    }
     .nav-links a.active {
-      background: #fff;
-      color: #0096c7;
+      background: #a09e9e;
+      color: #000000;
       box-shadow: 0 2px 6px rgba(0,180,216,0.1);
     }
 
@@ -72,7 +76,7 @@
 
     .about-box {
       max-width: 700px;
-      background: white;
+      background: rgb(167, 165, 165);
       border-radius: 16px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
       padding: 40px 32px;
@@ -141,7 +145,7 @@
       <a href="https://fhps.incidentiq.com" target="_blank" rel="noopener">Ticket</a>
        <a href="calendar.html">Calendar</a>
       <a href="about.html" class="active">About Me</a>
-      <a href="RAVE.html">404 ERROR</a>
+      <a href="space.html">Space</a>
     </nav>
   </aside>
 
