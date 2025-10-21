@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<title>Patrick is Who he is</title>
+<title>Patrick Is Who He Is</title>
 
 <style>
 html{
@@ -89,6 +88,11 @@ button:hover{
     text-align: center;
 }
 
+#mb{
+    text-align: center;
+    margin-top: 10px;
+}
+
 </style>
 </head>
 
@@ -112,16 +116,25 @@ button:hover{
         <button type="button"
             onclick="showPic()">
             Click Here to Display Patricks House!
-        </button>
+    </button>
     </div>
     <div id="house">
         <img src="/Images/patHouse.jpg" alt="Patricks House">
     </div>
 
+    <div id="mb">
+        <button type="button"
+            onclick="malware()">
+            Patrick Needs to speak with you!
+        </button>
+
 <script>
     function showPic(){
-
         document.getElementById("house").style.display="block";
+    }
+
+    function malware(){
+        window.alert("Your device has been taken over by Patrick Star!");
     }
 
 </script>

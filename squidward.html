@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squidward</title>
+<style>
+
+    html{
+        background-color:rgb(182, 178, 178);
+    }
+     #topNav a{
+            margin: 10px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            color: white;
+            padding: 8px;
+            background-color: rgb(184, 160, 151);
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        #topNav{
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: grey;
+            padding: 15px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        #topNav a:hover{
+            background-color: rgb(131, 106, 96);
+        }
+
+        #topNav a.active{
+            background-color: rgb(131, 106, 96);
+        }
+    #squidBan img{
+            width: 100%;
+            height: 300px;
+            display: block;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+    }
+
+    h1{
+        text-align: center;
+        font-style: normal;
+        font-family:monospace;
+        font-size: 40px;
+    }
+
+    #house{
+        display: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    #house img{
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(170, 168, 168);
+    }
+
+    button{
+        align-items: center;
+        background-color: rgb(184, 160, 151);
+        font-size: larger;
+        border-radius: 5px;
+        padding: 10px;
+        color: white;
+        border: none;
+        font-weight: bold;
+    }
+
+    button:hover{
+        background-color:  rgb(97, 96, 96);
+        box-shadow: 0 8px 16px 0 rgb(145, 145, 144);
+        color: white;
+    }
+
+    #showButton{
+        text-align: center;
+    }
+
+</style>
+
+</head>
+<body>
+    <div id="squidBan">
+        <img src="/Images/squid.jpg">
+    </div>
+
+    <div id="topNav">
+        <a href="home.html">Spongebob</a>
+        <a href="patrick.html">Patrick</a>
+        <a href="sandy.html">Sandy</a> 
+        <a href="squidward.html" class="active">Squidward</a>
+    </div>
+
+    <h1>Squidward lives a mundane life in a stone structure</h1>
+
+    <div id="showButton">
+        <button type="button"
+            onclick="picture()">
+            Click Here to see Squids awesome house.
+        </button>
+
+    </div>
+    <div id="house">
+        <img src="/Images/squidHouse.jpg" alt="Squidwards House">
+    </div>
+
+    <script>
+
+        function picture(){
+            document.getElementById('house').style.display='block';
+        }
+
+    </script>
+</body>
+</html>
