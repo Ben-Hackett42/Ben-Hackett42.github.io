@@ -65,6 +65,28 @@ h1{
 #house{
     text-align:center;
     margin: 10px;
+    display: none;
+}
+
+button{
+    align-items: center;
+    background-color: lightsalmon;
+    font-size: larger;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color:  rgb(248, 93, 32);
+    box-shadow: 0 8px 16px 0 yellow;
+    color: black;
+}
+
+#showButton{
+    text-align: center;
 }
 
 </style>
@@ -86,15 +108,23 @@ h1{
 
     <H1>Patrick Star Lives under a rock, Literally!</H1>
 
-
+    <div id="showButton">
+        <button type="button"
+            onclick="showPic()">
+            Click Here to Display Patricks House!
+        </button>
+    </div>
     <div id="house">
         <img src="/Images/patHouse.jpg" alt="Patricks House">
     </div>
 
-    <p id="demo"></p>
-
 <script>
-    document.getElementById("demo").innerHTML = "Hello.";
+    function showPic(){
+
+        document.getElementById("house").style.display="block";
+    }
+
 </script>
+
 </body>
 </html>
